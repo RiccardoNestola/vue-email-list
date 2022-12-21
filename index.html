@@ -26,15 +26,11 @@
 <div class="container">
     
 
-        <ul class="list-group py-4">
+        <ul class="list-group py-4" v-if="randomMail.length == 10">
             
                 <li class="list-group-item d-flex" v-for="mail in randomMail">
                     <span>{{mail}}</span>
                 </li>
-                
-                    
-                    
-
         
         </ul>
 
