@@ -4,30 +4,27 @@ const { createApp } = Vue
         data() {
             return {
 
-            randomMail: null,
+            randomMail: [],
             
         }
     },
         methods: {
 
         getRandomMail(){
-                
+            for (let index = 0; index < 10; index++) {
+
                 axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`)
                 .then( (response) => {
-                this.randomMail = response.data.response
-                
-                console.log(this.randomMail);
 
-                })
-                .catch(function (error) {
-                
-                console.log(error);
-                })
-                .then(function () {
-                
+                this.randomMail.push(response.data.response);
+                console.log(this.randomMail);
                 });
+            }
+
 
             }
+            
+
             
         },
 
